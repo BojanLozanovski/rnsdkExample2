@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "RNExample2"
 include(":app")
- 
+include(":RNSDKAndroid")
