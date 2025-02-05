@@ -1,7 +1,11 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    id("maven-publish")
 }
+
+group = "com.github.BojanLozanovski"
+version = "1.0"
 
 android {
     namespace = "com.example.rnsdkandroid"
@@ -67,4 +71,18 @@ dependencies {
     //<--
 
     api("com.github.BojanLozanovski:rnsdkExample1:afd7880949")
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"]) // You can use components["release"] or components["debug"] as needed
+
+                groupId = "com.github.BojanLozanovski"
+                artifactId = "rnsdkExample2"
+                version = "1.0"
+            }
+        }
+    }
 }

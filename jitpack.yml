@@ -1,6 +1,2 @@
 jdk:
   - openjdk17
-  
-install:
-  - chmod +x gradlew  # Ensure gradlew has execute permissions
-  - ./gradlew clean assembleRelease
